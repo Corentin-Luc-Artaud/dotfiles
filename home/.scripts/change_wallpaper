@@ -1,0 +1,42 @@
+#! /bin/bash 
+
+. config_paper.sh
+
+function change_wallpaper() {
+    echo $wallpaper
+    rm $wallpaper
+    ln -s $1 $wallpaper && \
+    feh --bg-scale $wallpaper
+}
+
+function change_lock_paper() {
+    rm $lock_paper
+    cat $1 | grep -i PNG
+    if [ $? -eq 0 ]; then 
+        ln -s $1 $lock_paper
+    else
+        convert $1 $lock_paper.png && \
+        mv $lock_paper.png $lock_paper
+    fi
+    preprocess_images
+}
+
+paper_dir=$HOME/Images
+cases="wallpaper\nlock_paper"
+choice=$(echo -e $cases | dmenu -p "which paper do you want to change ?") 
+if [ -z $choice ]; then exit 0; fi
+paper=$paper_dir/$(ls -1 $paper_dir | dmenu -p "choose your new paper")
+if [ -f $paper ]; then
+    case $choice in 
+        wallpaper)
+            change_wallpaper $paper && \
+            echo wallpaper changed
+            ;;
+        lock_paper)
+            change_lock_paper $paper && \
+            echo lock paper changed
+            ;;
+    esac
+else 
+    echo $paper is not a file
+fi

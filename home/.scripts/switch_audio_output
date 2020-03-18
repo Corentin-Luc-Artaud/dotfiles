@@ -1,0 +1,5 @@
+#! /bin/bash
+
+output=$(echo -e "analog-stereo\nhdmi-stereo"| dmenu -p "which audio output ? ")
+echo $output
+pactl set-card-profile 0 output:$output

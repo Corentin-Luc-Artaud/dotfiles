@@ -1,0 +1,10 @@
+#! /bin/bash
+
+if [ "$(xrandr | grep HDMI1 | grep -i ' connected')" ]; then
+    echo HDMI1 is plugged
+    xrandr --output HDMI1 --auto --right-of eDP1
+    $HOME/.fehbg
+else 
+    echo HDMI1 is unplugged
+    xrandr --output HDMI1 --auto --off
+fi

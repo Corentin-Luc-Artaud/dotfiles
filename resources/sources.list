@@ -1,0 +1,8 @@
+deb http://${proxy}debian.mirrors.ovh.net/debian/ stable main contrib non-free
+deb-src http://${proxy}debian.mirrors.ovh.net/debian stable contrib main non-free
+
+deb http://${proxy}security.debian.org/debian-security stable/updates main contrib non-free
+deb-src http://${proxy}security.debian.org/debian-security stable/updates main contrib non-free
+
+deb http://${proxy}debian.mirrors.ovh.net/debian/ stable-updates main contrib non-free
+deb-src http://${proxy}debian.mirrors.ovh.net/debian/ stable-updates main contrib non-free

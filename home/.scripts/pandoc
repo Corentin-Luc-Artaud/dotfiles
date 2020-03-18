@@ -1,0 +1,5 @@
+#! /bin/bash
+
+command -v docker >/dev/null 2>&1 || { echo >&2 "pandoc requires docker, but it's not installed.  Aborting."; exit 1; }
+
+docker run -it --rm -v $(pwd):"/data" --user $(id -u):$(id -g) pandoc/latex $@

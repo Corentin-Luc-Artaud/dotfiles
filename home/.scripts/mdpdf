@@ -1,0 +1,21 @@
+#! /bin/bash
+
+input=$1
+output=$2 
+
+linkcolor=${linkcolor:-blue}
+paperstyle=${paperstyle:-a4paper}
+margin=${margin:-2cm}
+mainfont=${mainfont:-"DejaVu Serif"}
+monofont=${monofont:-"DejaVu Sans Mono"}
+engine=${engine:-xelatex}
+
+pandoc "$input" \
+    -f gfm \
+    -V linkcolor:"$linkcolor" \
+    -V geometry:"$paperstyle" \
+    -V geometry:"$margin"\
+    -V mainfont="$mainfont" \
+    -V monofont="$monofont" \
+    --pdf-engine=$engine \
+    -o "$output"

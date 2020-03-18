@@ -1,0 +1,14 @@
+network-manager
+git
+i3
+compton
+sakura
+dunst
+pulseaudio 
+udiskie
+pavucontrol
+curl
+apt-transport-https 
+ca-certificates
+gnupg2
+software-properties-common

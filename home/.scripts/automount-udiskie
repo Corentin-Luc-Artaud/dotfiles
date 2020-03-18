@@ -1,0 +1,10 @@
+#! /bin/bash
+
+lock=/tmp/~lock-udiskie-$(whoami)
+
+if [ ! -f $lock ]; then
+    notify-send "udiskie" "starting"
+    touch $lock
+    udiskie -an &> /dev/null
+    rm $lock
+fi

@@ -1,0 +1,7 @@
+#! /bin/bash
+
+. i3exit.sh
+
+action=$(echo -e $menu_options | dmenu -p "power menu ")
+power_action $action
+ 

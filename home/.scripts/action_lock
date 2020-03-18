@@ -1,0 +1,7 @@
+#! /bin/bash
+
+# import i3exit
+. i3exit.sh
+
+# run lock
+lock
