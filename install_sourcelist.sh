@@ -1,9 +1,7 @@
 #! /bin/bash
 
-if [ ! -z "${proxy}" ]; then 
-    if [[ ${proxy} == */ ]]; then 
-        proxy=${proxy}/
-    fi
+if [[ ${proxy} != */ ]]; then 
+    proxy=${proxy}/
 fi
 
 eval "cat >> EOF
