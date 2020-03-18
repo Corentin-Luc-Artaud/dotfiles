@@ -1,7 +1,7 @@
 #! /bin/bash
 
 if [ ! -z "${proxy}" ]; then 
-    if [ ${proxy} == */ ]; then 
+    if [[ ${proxy} == */ ]]; then 
         proxy=${proxy}/
     fi
 fi
