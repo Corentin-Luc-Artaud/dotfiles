@@ -3,16 +3,18 @@
 # This scripts install the source-list, all packages in the packagelist and put the dotfiles to the right place
 
 # make source list with and without proxy
+echo "install source list"
 sudo ./install_sourcelist.sh
 
 # install packages with aptitude
 # update aptitude
 sudo apt-get update
 # install all packages
-sudo apt-get install $(../packagelist)
+echo "installing packages"
+sudo apt-get install -y $(../packagelist)
 
 # install home directory
-cp -r home/* ${HOME}
+cp -r home/.config home/.scripts .bashrc ${HOME}
 
 # install docker
 if [[ "$*" == --docker ]]; then

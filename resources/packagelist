@@ -1,5 +1,6 @@
 network-manager
 git
+xorg
 i3
 compton
 sakura
@@ -7,8 +8,11 @@ dunst
 pulseaudio 
 udiskie
 pavucontrol
+firefox-esr
 curl
 apt-transport-https 
 ca-certificates
 gnupg2
 software-properties-common
+zram-tools
+powertop
