@@ -8,6 +8,9 @@ dunst
 pulseaudio 
 udiskie
 pavucontrol
+vim
+feh
+magemagic
 firefox-esr
 curl
 apt-transport-https 
